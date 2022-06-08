@@ -1,0 +1,30 @@
+\section{Geometry of hyper-surfaces}
+\subsection{Extremalpoints}
+For extremal points the gradient must be $0$.
+\[\nabla f = \vec{0}\]
+The following points $P_i$ are possible candidates for extremal points in definitionrange $\mathbb{D}_f$:
+\begin{enumerate}[nosep]
+	\item Points where $\mathbb{D}_f$ not exists
+	\item Points where $\nabla f$ not exists
+	\item Points where $\nabla f = \vec{0}$
+\end{enumerate}
+
+~\\
+\noindent To identify extremal points from candidates $P_i$, we can use hessian-matrix $H_f$.
+\[
+\mathbf{H}_f(\vec{x}) = \begin{pmatrix}
+	\frac{\partial^2 f}{\partial x_1 \partial x_1}(\vec{x}) & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n}(\vec{x})\\
+	\vdots & \ddots & \vdots \\
+	\frac{\partial^2 f}{\partial x_n \partial x_1}(\vec{x}) & \dots & \frac{\partial^2 f}{\partial x_n \partial x_n}(\vec{x})
+\end{pmatrix}
+\]
+When $H_f$ for point $P_i$ is positive/negative definit an extremal point is found. If neighter positive or negative, a sattlepoint is found. Definit of a matrix can be evaluatet with Eigenwerte (chapter \ref{eigenwerte}), quadratic formula (chapter \ref{quadratic}) or also Hurwitz-Kriterium ($\det(H_{11}) \le 0 \rightarrow$ indefinit)
+\begin{align*}
+	\mathbf{H}_f(\vec{P_i}) = \begin{cases*}
+		\forall \lambda_i < 0, & \text{Local Maximum, negative definit} \\
+		\forall \lambda_i > 0, & \text{Local Minimum, positivdefinit} \\
+		\lambda_i < 0 \cup \lambda_i > 0 & \text{Sattelpoint, indefinit} \\
+		\lambda_i = 0 & \text{Further investigations required}
+	\end{cases*}
+\end{align*}
+

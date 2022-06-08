@@ -1,0 +1,47 @@
+\section{Linear Algebra}
+For the following topics \href{https://github.com/OST-HS20/LinAlg}{https://github.com/OST-HS20/LinAlg} summary is highly recommended to read first.
+
+\subsection{Introduction}
+\begin{itemize}[nosep]
+	\item $(A \cdot B)^{-1} = B^{-1} \cdot A^{-1}$
+	\item $(A^T)^{-1} = (A^{-1})^T$
+	\item $(A^{-1})^{-1} = A$
+	\item $(k \cdot A)^{-1} = k^{-1} \cdot A^{-1}$ (Skalar $k \neq 0$)
+	\item $(Ax)^T = x^TA^T$
+	\item $AA^{-1} = E$
+	\item $A(\lambda x) = \lambda(Ax)$
+	\item $A(x + y) = Ax + Ay$
+\end{itemize}
+
+\subsection{Quadratic Formula}\label{quadratic}
+When all coeffizent are positive/negative, the matrix $M$ is positive/negative definit otherwise indefinit.
+\[	\vec{x}^T\mathbf{M}\vec{x} 	\]
+\noindent\textbf{Example:}
+$
+ \vec{x} = \begin{pmatrix}
+ 	x \\ y \\ z
+ \end{pmatrix} \quad \text{and} \quad \mathbf{M} = \begin{pmatrix}
+ 0 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 & 2
+\end{pmatrix}
+$
+\begin{align*}
+	\vec{x}^T\mathbf{M}\vec{x} &= 2xy + 2y^2 + 2z^2 \\
+	&= 2(y^2 + xy) + 2z^2 \\
+	&= \textcolor{green}{2} \left(y + \frac{1}{2}x\right)^2 \textcolor{red}{- \frac{2}{4}} x^2 \textcolor{blue}{+ 2} z^2
+\end{align*}
+Different factors of different sign, the quadratic form is indefinite.
+
+\subsection{Eigenwerte}\label{eigenwerte}
+With the following formula the Eigenwerte $\textcolor{red}{\lambda}_n$ can be found:
+\begin{equation}
+	\det(\mathbf{H} - \textcolor{red}{\lambda} E) = 0
+\end{equation}
+\noindent\textbf{Example}
+$\mathbf{H} = \begin{pmatrix} 0 & 3 \\ -2 & 5 \end{pmatrix}$
+\\
+\[\det\begin{pmatrix}
+	0 - \lambda & 3 \\
+	-2 & 5 - \lambda
+\end{pmatrix} \Rightarrow \lambda^2 - 5\lambda + 6 = 0\]
+\[{\scriptstyle \lambda_1 = 3; \lambda_2 = 2}\]
+
