@@ -28,7 +28,7 @@
 		$\sigma(x) = \frac{1}{1+ e^{-xc}}$ & $\rightarrow$ & $\sigma(x)(1 - \sigma(x)$\\
 	\end{tabular}
 }
-
+\subsection{Trigo}
 \subsubsection{Unit circle}
 \begin{center}
 	\includegraphics[width=0.8\columnwidth]{Images/einheitskreis}\\
@@ -70,3 +70,28 @@ $\cos(a+k\cdot2\pi)=\cos(a) \qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad
 	\cos^3(a) &= \frac{1}{4}(3\cos(a) + \cos(3a)) \\
 \end{align*}
 
+\subsection{Diverse}
+\begin{align*}
+	e^{-\frac{\mathbf{x}^T\mathbf{x}}{\left|\mathbf{x}\right|}} = e^{-\frac{\left|\mathbf{x}\right|^2}{\left|\mathbf{x}\right|}} = e^{-\left|\mathbf{x}\right|} \\
+	\nabla e^{-\left|\mathbf{x}\right|^2} = e^{-\left|\mathbf{x}\right|^2} \nabla \left(-\left|\mathbf{x}\right|\right) = e^{-\left|\mathbf{x}\right|^2} (-2) \left|\mathbf{x}\right| \nabla \left|\mathbf{x}\right| = -2e^{-\left|\mathbf{x}\right|^2} \mathbf{x}^T \\
+	\mathbf{x}^T\mathbf{x} = \left|\mathbf{x}\right|^2	
+\end{align*}
+
+\subsection{Adv. Examples} Example I: $f(\mathbf{x}) = (\mathbf{x}^T\mathbf{x})\mathbf{x}$
+\begin{align*}
+f_i(\mathbf{x}) &\eqi \sum_{k}x_kx_kx_i \\
+\frac{\partial}{\partial j}f_i(\mathbf{x}) = \sum_{k}\frac{\partial}{\partial j}(x_kx_kx_i) &= \sum_{k}\frac{\partial}{\partial j}(x_k^2)\cdot x_i + x_k^2\cdot \frac{\partial}{\partial j} x_i \\
+\sum_{k}(2x_k\delta_{jk}x_i + x_k^2\delta_{ji}) &= 2x_jx_i + \sum_{k}x_k^2\delta_{ji} = (\mathbf{J}_f(\mathbf{x}))_{ji}
+\end{align*}
+
+
+~\\
+Example 2
+\begin{align*}
+	\nabla\ln\left(\sum_{i}1 + x_i(x_i +1)\right) = \frac{\partial}{\partial x_j}\ln\left(\sum_{i}1 + x_i(x_i +1)\right) \\
+	= \frac{1}{\sum_{i}1 + x_i(x_i + 1)} \frac{\partial}{\partial x_j}\left(\sum_{i} 1 + x_i(x_i + 1)\right)\\
+	= \frac{1}{\sum_{i}1 + x_i(x_i + 1)} \left(\sum_{i}\frac{\partial}{\partial x_j} 1 + \frac{\partial}{\partial x_j}x_i(x_i + 1)\right)\\
+	= \frac{1}{\sum_{i}1 + x_i(x_i + 1)} \left(\sum_{i}\frac{\partial}{\partial x_j}x_i^2 + x_i\right)\\
+	= \frac{1}{\sum_{i}1 + x_i(x_i + 1)} \left(\sum_{i}(2x_i + 1)\delta_{ij}\right)\\
+	= \frac{2x_j + 1}{\sum_{i}1 + x_i(x_i + 1)}\\
+\end{align*}

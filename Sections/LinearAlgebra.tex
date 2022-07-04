@@ -45,3 +45,27 @@ $\mathbf{H} = \begin{pmatrix} 0 & 3 \\ -2 & 5 \end{pmatrix}$
 \end{pmatrix} \Rightarrow \lambda^2 - 5\lambda + 6 = 0\]
 \[{\scriptstyle \lambda_1 = 3; \lambda_2 = 2}\]
 
+
+\subsection{Cholesky-Zerlegung}
+Only for symmetrical and positively defined matrices
+
+\begin{align*}
+	A &= \begin{pmatrix}
+		a_{1,1}    & a_{1,2} & a_{1,3} \\
+		& a_{2,2} & a_{2,3} \\
+		\text{sym} &         & a_{3,3} \\
+	\end{pmatrix} = \underbrace{LL^T}_{Zerlegung} \\
+	L &= 
+	\begin{pmatrix}
+		l_{1,1} & 0 & 0 \\
+		l_{1,2} & l_{2,2} & 0 \\
+		l_{1,3} & l_{2,3} & l_{3,3} \\
+	\end{pmatrix}
+\end{align*}
+
+
+\begin{align*}
+	l_{1,1} &= \sqrt{a_{1,1}} &\qquad l_{1,2} &= \frac{a_{1,2}}{l_{1,1}} \\
+	l_{1,3} &= \frac{a_{1,3}}{l_{1,1}} &\qquad l_{2,2} &= \sqrt{a_{2,2} - l_{1,2}^2} \\
+	l_{2,3} &= \frac{a_{2,3} - l_{1,2} \cdot l_{1,3}}{l_{2,2}} &\qquad l_{3,3} &= \sqrt{a_{3,3} - l_{1,3}^2 - l_{2,3}^2} \\
+\end{align*}
